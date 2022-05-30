@@ -1,0 +1,22 @@
+INSERT INTO `produk` (`nama_produk`, `stok_produk`, `harga_produk`)  VALUES 
+('Sprite', 10, 12000),
+('Coca-Cola', 13, 10000),
+('Chitato', 23, 8000),
+('Taro', 10, 12000),
+('Aqua', 10, 3000),
+('Club', 10, 3000),
+('KinderJoy', 10, 11000),
+('Qtela', 5, 9000),
+('Teh Pucuk', 22, 5000),
+('Golda', 15, 4000),
+('Luwak White Coffe', 18, 6000),
+('Indomie Goreng', 68, 3200),
+('Mie Sedap Goreng', 50, 3100),
+('Mie Sedap Soto', 52, 3300),
+('Mie Sedap Kare', 23, 3250),
+('Indomie Soto', 43, 3200),
+('Indomie Kare', 34, 3300),
+('Roti', 6, 12000),
+('Susu Kental Manis', 20, 14000),
+('Teh Kotak', 31, 7500);
+
