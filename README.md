@@ -16,6 +16,13 @@ Sistem Web Warkop ini dikembangkan di dalam Kerangka Kerja Aplikasi (_Framework_
     DB_NAME = "warkop"
     ```
 4. `APP_TOKEN` biarkan kosong, karena nanti akan diisikan secara otomatis oleh sistem framework
+5. Database yang disediakan hanya akan berisi 1 data Admin saja, data-data lainnya dapat masuk ke halaman admin.
+6. Halaman admin ada di url `warkop/admin`.
+7. Lakukan login kedalam halaman admin dengan <br> No Telp : 081234567890 <br> NIK : 123456
+
+
+
+
 
 ## Fitur
 - **_Self Service_**, untuk pelanggan yang ingin memesan secara mandiri
