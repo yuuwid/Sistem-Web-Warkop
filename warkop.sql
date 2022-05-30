@@ -120,6 +120,8 @@ create table pembelian
 );
 
 
+INSERT INTO app (antrian) VALUES (1);
+
 INSERT INTO jabatan (jenis_jabatan) VALUES ('Admin');
 
 INSERT INTO pegawai (id_jabatan, nama_pegawai, nik, notelp_pegawai) VALUES (1, 'Admin', '123456', '081234567890');
