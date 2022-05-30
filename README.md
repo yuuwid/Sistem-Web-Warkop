@@ -25,4 +25,4 @@ Sistem Web Warkop ini dikembangkan di dalam Kerangka Kerja Aplikasi (_Framework_
 
 
 ## Framework Support
-![Lawana](https://github.com/yuuwid/Lawana/blob/master/Public/images/lawana/lawana.png?raw=true | width=50)
+<img src="https://github.com/yuuwid/Lawana/blob/master/Public/images/lawana/lawana.png?raw=true" width="30%">
