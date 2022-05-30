@@ -120,4 +120,6 @@ create table pembelian
 );
 
 
-INSERT INTO pegawai (id_jabatan, nama_pegawai, nik, notelp_pegawai) VALUES (5, 'Admin', '123456', '081234567890');
+INSERT INTO warkop.jabatan (jenis_jabatan) VALUES ('Admin');
+
+INSERT INTO pegawai (id_jabatan, nama_pegawai, nik, notelp_pegawai) VALUES (1, 'Admin', '123456', '081234567890');
