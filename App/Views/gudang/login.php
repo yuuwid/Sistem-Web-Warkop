@@ -26,12 +26,12 @@ need('partials.main_header') ?>
         <form method="POST" action="<?= URL ?>/gudang/login">
             <div class="mb-3">
                 <label for="inputnotelp" class="form-label">No Telp</label>
-                <input name="notelp" type="text" class="form-control" id="inputnotelp" required value="084655666453">
+                <input name="notelp" type="text" class="form-control" id="inputnotelp" required>
             </div>
 
             <div class="mb-3">
                 <label for="inputNIK" class="form-label">NIK</label>
-                <input name="nik" type="password" class="form-control" id="inputNIK" required value="796526">
+                <input name="nik" type="password" class="form-control" id="inputNIK" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
