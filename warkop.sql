@@ -118,3 +118,6 @@ create table pembelian
 	constraint FK_ID_SUPPLIER
 		foreign key (id_supplier) references supplier (id_supplier)
 );
+
+
+INSERT INTO warkop.pegawai (id_jabatan, nama_pegawai, nik, notelp_pegawai) VALUES (5, 'Admin', '123456', '081234567890');
