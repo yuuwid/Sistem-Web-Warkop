@@ -49,24 +49,16 @@ class Pegawai extends BaseModel
         return $result;
     }
 
-    public static function jabatan()
-    {
-        $query = "SELECT * FROM jabatan";
-
-        $result = self::query($query)->execute()->fetch(FETCH_ALL);
-        return $result;
-    }
-
     public static function store($data) 
     {
-        $query = "INSERT INTO pegawai(id_jabatan, nama_pegawai, nik, notelp_pegawai) VALUES (:id_jabatan, :nama_pegawai, :nik, :notelp_pegawai)";
+        $query = "INSERT INTO pegawai(id_jabatan, nama_pegawai, nik, notelp_pegawai, alamat_pegawai) VALUES (:id_jabatan, :nama_pegawai, :nik, :notelp_pegawai, :alamat_pegawai)";
 
         return self::query($query)->execute($data);
     }
 
     public static function update($id_pegawai, $data) 
     {
-        $query = "UPDATE pegawai SET id_jabatan = :id_jabatan, nama_pegawai = :nama_pegawai, nik = :nik, notelp_pegawai = :notelp_pegawai
+        $query = "UPDATE pegawai SET id_jabatan = :id_jabatan, nama_pegawai = :nama_pegawai, nik = :nik, notelp_pegawai = :notelp_pegawai, alamat_pegawai = :alamat_pegawai
                     WHERE id_pegawai = {$id_pegawai}";
 
         return self::query($query)->execute($data);

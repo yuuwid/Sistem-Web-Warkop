@@ -2,6 +2,7 @@
 
     <script src="<?= PUBLIC_URL ?>/assets/aos/aos.js"></script>
 
+
     <script>
         AOS.init();
     </script>

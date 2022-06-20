@@ -391,7 +391,7 @@ need('partials.main_header');
         const feedback = $('#feedback-bayar');
         const btn_bayar = $('#btn-bayar');
 
-        if (parseInt(harga) < parseInt(bayar)) {
+        if (parseInt(harga) <= parseInt(bayar)) {
             feedback.hide();
             btn_bayar.attr('disabled', false);
         } else {

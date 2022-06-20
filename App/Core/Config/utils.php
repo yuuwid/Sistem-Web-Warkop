@@ -76,3 +76,17 @@ function datenow($format = 'Y-m-d H:i:s')
 {
     return date($format);
 }
+
+
+function faker()
+{
+    global $faker;
+
+    return $faker;
+}
+
+function is_assoc(array $arr)
+{
+    if (array() === $arr) return false;
+    return array_keys($arr) !== range(0, count($arr) - 1);
+}

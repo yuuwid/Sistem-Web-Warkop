@@ -1,8 +1,8 @@
 <?php
 
-namespace API;
+namespace Api;
 
-use Lawana\API\BaseApi;
+use Lawana\Api\BaseApi;
 use Lawana\Message\Flasher;
 use Lawana\Utils\Request;
 use Lawana\Utils\Session;

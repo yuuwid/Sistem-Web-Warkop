@@ -69,7 +69,7 @@ class Kategori extends BaseModel
 
     public static function drop($key, $val)
     {
-        $query = "DELETE FROM merk WHERE {$key} = {$val}";
+        $query = "DELETE FROM kategori WHERE {$key} = {$val}";
 
         $result = self::query($query)->execute();
 

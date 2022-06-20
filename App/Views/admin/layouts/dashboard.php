@@ -20,8 +20,7 @@ use Lawana\Message\Flasher;
 
                 <div class="col border-end ">
                     <p class="mb-0"><i class="bi bi-bag-fill"></i> Jumlah Transaksi</p>
-                    <h1 class="my-0  text-coral"><?= $data['jumlah_transaksi']['total'] ?></h1>
-                    <p class="my-0 text-end"><small>Hari ini</small></p>
+                    <h1 class="my-0  text-coral"><?= $data['total_transaksi'] ?></h1>
                 </div>
                 <div class="col border-end ">
                     <p class="mb-0"><i class="bi bi-clock-history"></i> Transaksi Baru</p>

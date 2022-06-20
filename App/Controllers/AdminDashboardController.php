@@ -8,6 +8,7 @@ use Lawana\Message\Flasher;
 use Lawana\Utils\Redirect;
 use Lawana\Utils\Session;
 use Models\AppWeb;
+use Models\Jabatan;
 use Models\Kategori;
 use Models\KodePembelian;
 use Models\KodeTransaksi;
@@ -42,6 +43,7 @@ class AdminDashboardController extends BaseController
 
         if ($action == 'dashboard') {
             $data = $this->data_dashboard();
+            $data['total_transaksi'] = Penjualan::count()['total'];
             $data['antrian'] = AppWeb::antrian()['antrian'];
         } else if ($action == 'transaksi') {
             // lewat API
@@ -54,7 +56,7 @@ class AdminDashboardController extends BaseController
             $data['pembelian'] = Pembelian::all();
         }  else if ($action == 'management-pegawai') { 
             $data['pegawai'] = Pegawai::all();
-            $data['jabatan'] = Pegawai::jabatan();
+            $data['jabatan'] = Jabatan::all();
          }
 
         $data['action'] = $action;
@@ -70,7 +72,6 @@ class AdminDashboardController extends BaseController
             'diproses' => 0,
             'selesai' => 0,
             'batal' => 0,
-            'total' => 0,
             'pemasukan' => 0
         ];
         $i = 0;
@@ -85,7 +86,6 @@ class AdminDashboardController extends BaseController
             } elseif ($phi['status'] == 'dibatalkan') {
                 $results['batal'] += 1;
             }
-            $results['total'] += 1;
             $results['pemasukan'] += $phi['total_harga'];
 
             $results['kode_transaksi'] = KodeTransaksi::create($phi);
@@ -98,9 +98,6 @@ class AdminDashboardController extends BaseController
             'jumlah_pegawai' => Pegawai::count()['jumlah_pegawai'],
             'jumlah_stok' => Produk::count_stock()['jumlah_stok'],
         ];
-
-
-        // var_dump($data);
 
         return $data;
     }

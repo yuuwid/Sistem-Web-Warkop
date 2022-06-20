@@ -299,7 +299,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Modal Add Produk -->
     <div class="modal fade" id="addProdukModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addProdukModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -326,7 +326,7 @@
                                     <label class="form-label fw-bold">Merk Produk</label>
                                     <div class="input-group mb-3">
                                         <select class="form-select" id="select-merk-produk-add">
-    
+
                                         </select>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@
                                     <label class="form-label fw-bold">Ketegori Produk</label>
                                     <div class="input-group mb-3">
                                         <select class="form-select" id="select-kategori-produk-add">
-    
+
                                         </select>
                                     </div>
                                 </div>
@@ -367,9 +367,9 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
-    
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-success" id="button-add-produk" data-bs-target="#feedbackModal" data-bs-toggle="modal" data-bs-dismiss="modal">Tambah</button>
@@ -662,11 +662,18 @@
             opt_select.setAttribute('selected', true)
             select_merk_produk.appendChild(opt_select)
 
-            for (const index in response) {
+            if (response.length <= 2) {
                 const opt_select = document.createElement('option');
-                opt_select.value = response[index]['id_merk']
-                opt_select.innerHTML = response[index]['nama_merk']
+                opt_select.value = response['id_merk']
+                opt_select.innerHTML = response['nama_merk']
                 select_merk_produk.appendChild(opt_select)
+            } else {
+                for (const index in response) {
+                    const opt_select = document.createElement('option');
+                    opt_select.value = response[index]['id_merk']
+                    opt_select.innerHTML = response[index]['nama_merk']
+                    select_merk_produk.appendChild(opt_select)
+                }
             }
         })
 
@@ -705,8 +712,8 @@
             }
 
             if ((json['nama_produk'].length != 0) && (json['stok_produk'] != 0) && (json['harga_produk'].length != 0) && (json['id_merk'] != 0) && (json['id_kategori'] != 0)) {
-                
-                InsertDataApi('produk', json, function(){})
+
+                InsertDataApi('produk', json, function() {})
 
                 document.querySelector('#feedback-modal-icon').innerHTML = '<i class="bi bi-folder-check"></i>';
 
@@ -814,12 +821,21 @@
             opt_select.setAttribute('selected', true)
             select_merk_produk.appendChild(opt_select)
 
-            for (const index in response) {
-                if (response[index]['id_merk'] != data['id_merk']) {
+            if (response.length <= 2) {
+                if (response['id_merk'] != data['id_merk']) {
                     const opt_select = document.createElement('option');
-                    opt_select.value = response[index]['id_merk']
-                    opt_select.innerHTML = response[index]['nama_merk']
+                    opt_select.value = response['id_merk']
+                    opt_select.innerHTML = response['nama_merk']
                     select_merk_produk.appendChild(opt_select)
+                }
+            } else {
+                for (const index in response) {
+                    if (response[index]['id_merk'] != data['id_merk']) {
+                        const opt_select = document.createElement('option');
+                        opt_select.value = response[index]['id_merk']
+                        opt_select.innerHTML = response[index]['nama_merk']
+                        select_merk_produk.appendChild(opt_select)
+                    }
                 }
             }
         })
@@ -837,12 +853,21 @@
             opt_select.setAttribute('selected', true)
             select_kategori_produk.appendChild(opt_select)
 
-            for (const index in response) {
-                if (response[index]['id_kategori'] != data['id_kategori']) {
+            if (response.length != 2) {
+                if (response['id_kategori'] != data['id_kategori']) {
                     const opt_select = document.createElement('option');
-                    opt_select.value = response[index]['id_kategori']
-                    opt_select.innerHTML = response[index]['jenis_kategori']
-                    select_kategori_produk.appendChild(opt_select)
+                    opt_select.value = response['id_kategori']
+                    opt_select.innerHTML = response['jenis_kategori']
+                    select_merk_produk.appendChild(opt_select)
+                }
+            } else {
+                for (const index in response) {
+                    if (response[index]['id_kategori'] != data['id_kategori']) {
+                        const opt_select = document.createElement('option');
+                        opt_select.value = response[index]['id_kategori']
+                        opt_select.innerHTML = response[index]['jenis_kategori']
+                        select_kategori_produk.appendChild(opt_select)
+                    }
                 }
             }
         })
@@ -889,7 +914,7 @@
                 'id_merk': select_merk_produk.value,
                 'id_kategori': select_kategori_produk.value
             }
-            
+
             DataApi('produk', id, 'update', json, function() {});
         }
 
@@ -911,7 +936,6 @@
                 }
                 temp = '&' + key + '=' + passed
                 url = url + temp;
-                // console.log(url);
             }
         }
 

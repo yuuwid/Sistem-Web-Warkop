@@ -7,7 +7,7 @@ need('partials.main_header') ?>
 <?php need('dashboard.navbar_d', $data) ?>
 <title><?= $data['title'] ?></title>
 
-<div class="container mt-5" id="keranjang">
+<div class="container" id="keranjang" style="margin-top: 100px;">
 
     <div id="flasher">
         <?= Flasher::show('keranjang') ?>
@@ -31,7 +31,7 @@ need('partials.main_header') ?>
                 <div class="card-body">
                     <section class="row row-cols-3 px-4">
                         <div class="col col-2">
-                            <img src="<?= PUBLIC_URL ?>/images/<?= $produk['gambar_produk'] ?>" class="img-fluid">
+                            <img src="<?= PUBLIC_URL ?>/images/produk/<?= $produk['gambar_produk'] ?>" class="img-fluid">
                         </div>
                         <div class="col col-6 my-auto">
                             <h4><?= $produk['nama_produk'] ?></h4>
@@ -52,6 +52,9 @@ need('partials.main_header') ?>
             <h2>Tidak ada Pesanan</h2>
         </div>
     <?php endif; ?>
+
+
+    <div style="height: 100px;"></div>
 
     <nav class="navbar navbar-dark bg-dark text-light fixed-bottom">
         <div class="container">

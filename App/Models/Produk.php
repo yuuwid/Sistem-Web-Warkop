@@ -14,6 +14,13 @@ class Produk extends BaseModel
         LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori";
     }
 
+    public static function all()
+    {
+        $query = "SELECT * FROM produk";
+
+        return self::fetch($query);
+    }
+
     public static function getBy($key, $val)
     {
         $query = self::joinQuery() . " WHERE {$key} = {$val}";

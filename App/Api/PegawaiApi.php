@@ -1,8 +1,8 @@
 <?php
 
-namespace API;
+namespace Api;
 
-use Lawana\API\BaseApi;
+use Lawana\Api\BaseApi;
 use Lawana\Utils\Request;
 use Models\Pegawai;
 
@@ -13,11 +13,6 @@ class PegawaiApi extends BaseApi
     public function get(Request $request)
     {
         return Pegawai::getWhere('id_pegawai', $request->get('id'));
-    }
-
-    public function jabatan(Request $request)
-    {
-        return Pegawai::jabatan();
     }
 
     
@@ -31,6 +26,7 @@ class PegawaiApi extends BaseApi
             ':nama_pegawai' => str_replace('\\s', ' ', $req['nama_pegawai']),
             ':nik' => str_replace('\\s', ' ', $req['nik']),
             ':notelp_pegawai' => str_replace('\\s', ' ', $req['notelp_pegawai']),
+            ':alamat_pegawai' => str_replace('\\s', ' ', $req['alamat_pegawai']),
         ];
 
         return Pegawai::store($data);
@@ -47,6 +43,7 @@ class PegawaiApi extends BaseApi
             'nama_pegawai' => str_replace('\\s', ' ', $req['nama_pegawai']),
             'nik' => str_replace('\\s', ' ', $req['nik']),
             'notelp_pegawai' => str_replace('\\s', ' ', $req['notelp_pegawai']),
+            'alamat_pegawai' => str_replace('\\s', ' ', $req['alamat_pegawai']),
         ];
 
         return Pegawai::update($id_pegawai, $data);

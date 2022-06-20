@@ -23,7 +23,7 @@ class GudangController extends BaseController
     {
         $this->middleware('gudang');
 
-        return view('gudang.login');
+        return view('gudang.login', ['title' => 'Gudang Login']);
     }
 
     public function login_auth(Request $request)
@@ -32,7 +32,7 @@ class GudangController extends BaseController
 
         // validate
         if ($data != false) {
-            if ($data['jenis_jabatan'] == 'Staff Gudang') {
+            if ($data['jenis_jabatan'] == 'Staf Gudang') {
                 Session::make('gudang', $data);
 
                 Redirect::to('/gudang/dashboard?action=dashboard');

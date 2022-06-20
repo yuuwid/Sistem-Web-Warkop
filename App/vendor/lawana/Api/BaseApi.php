@@ -1,6 +1,6 @@
 <?php
 
-namespace Lawana\API;
+namespace Lawana\Api;
 
 class BaseApi
 {

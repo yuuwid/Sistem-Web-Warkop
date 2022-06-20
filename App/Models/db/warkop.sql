@@ -14,8 +14,8 @@
 
 
 -- Dumping database structure for warkop
-CREATE DATABASE IF NOT EXISTS `warkop` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `warkop`;
+-- CREATE DATABASE IF NOT EXISTS `warkop` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+-- USE `warkop`;
 
 -- Dumping structure for table warkop.app
 CREATE TABLE IF NOT EXISTS `app` (
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `merk` (
   `id_merk` int(11) NOT NULL AUTO_INCREMENT,
   `nama_merk` varchar(30) NOT NULL,
   PRIMARY KEY (`id_merk`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 -- Data exporting was unselected.
 
@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `pegawai` (
   `nama_pegawai` varchar(100) NOT NULL,
   `nik` char(6) NOT NULL,
   `notelp_pegawai` varchar(15) DEFAULT '-',
+  `alamat_pegawai` TEXT DEFAULT NULL,
   PRIMARY KEY (`id_pegawai`),
   KEY `FK_ID_JABATAN` (`id_jabatan`),
   CONSTRAINT `FK_ID_JABATAN` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`)
@@ -70,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
   `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT,
   `nama_pelanggan` varchar(100) NOT NULL,
   PRIMARY KEY (`id_pelanggan`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 -- Data exporting was unselected.
 
@@ -92,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `penjualan` (
   KEY `FK_ID_PEGAWAI2` (`id_pegawai`),
   CONSTRAINT `FK_ID_PEGAWAI2` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`),
   CONSTRAINT `FK_ID_PELANGGAN` FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id_pelanggan`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 -- Data exporting was unselected.
 
@@ -111,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `produk` (
   KEY `FK_ID_KATEGORI` (`id_kategori`),
   CONSTRAINT `FK_ID_KATEGORI` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`),
   CONSTRAINT `FK_ID_MERK` FOREIGN KEY (`id_merk`) REFERENCES `merk` (`id_merk`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 -- Data exporting was unselected.
 

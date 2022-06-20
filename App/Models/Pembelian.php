@@ -20,7 +20,7 @@ class Pembelian extends BaseModel
 
     public static function all()
     {
-        $query = self::sql() . 'ORDER BY status';
+        $query = self::sql() . 'ORDER BY status ASC, tanggal_pembelian DESC';
 
         $results = self::query($query)->execute()->fetch(FETCH_ALL);
 
@@ -43,5 +43,21 @@ class Pembelian extends BaseModel
         $results = self::query($query)->execute()->fetch(FETCH_ALL);
 
         return $results;
+    }
+
+    public static function store($data)
+    {
+        $query = "INSERT INTO pembelian(id_supplier, id_produk, id_pegawai, jumlah_pembelian, harga_beli, tanggal_pembelian) VALUES (:id_supplier, :id_produk, :id_pegawai, :jumlah_pembelian, :harga_beli, :tanggal_pembelian)";
+
+        $bind = [
+            ':id_supplier' => $data['id_supplier'],
+            ':id_produk' => $data['id_produk'],
+            ':id_pegawai' => $data['id_pegawai'],
+            ':jumlah_pembelian' => $data['jumlah_pembelian'],
+            ':harga_beli' => $data['harga_beli'],
+            ':tanggal_pembelian' => $data['tanggal_pembelian'],
+        ];
+
+        return self::query($query)->execute($bind)->result();
     }
 }

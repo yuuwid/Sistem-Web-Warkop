@@ -1,8 +1,8 @@
 <?php
 
-namespace API;
+namespace Api;
 
-use Lawana\API\BaseApi;
+use Lawana\Api\BaseApi;
 use Lawana\Utils\Request;
 use Models\Merk;
 

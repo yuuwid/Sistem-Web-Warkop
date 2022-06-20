@@ -2,6 +2,7 @@
 
 namespace PDODB;
 
+use Lawana\Utils\Redirect;
 use PDO, PDOException;
 
 class PDOConnect
@@ -46,7 +47,11 @@ class PDOConnect
         $this->_error = [];
         $this->_results = [];
 
-        $this->_stmt = $this->_pdo->prepare($query);
+        if ($this->_pdo != null) {
+            $this->_stmt = $this->_pdo->prepare($query);
+        } else {
+            Redirect::error('DATABASE ERROR', 'Please Connect the Database Server or Check the Database/Table name was exist');
+        }
 
         return $this;
     }

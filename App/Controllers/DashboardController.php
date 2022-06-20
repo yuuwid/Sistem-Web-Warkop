@@ -7,6 +7,8 @@ use Lawana\Controller\BaseController,
 use Lawana\Utils\Session,
     Lawana\Utils\Redirect;
 use Models\AppWeb;
+use Models\Kategori;
+use Models\Merk;
 use Models\Pelanggan;
 use Models\Penjualan;
 use Models\Produk;
@@ -31,6 +33,8 @@ class DashboardController extends BaseController
             'title' => 'Pesan',
             'nama_pelanggan' => Session::get('nama-pelanggan'),
             'produk' => Produk::getProduks(),
+            'merk' => Merk::all(),
+            'kategori' => Kategori::all(),
             'keranjang' => $keranjang
         ];
 

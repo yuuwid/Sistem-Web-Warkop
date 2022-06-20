@@ -1,0 +1,47 @@
+{
+    "name": "lawana-framework/mvc",
+    "type": "project",
+    "license": "GPL",
+    "minimum-stability": "dev",
+    "require": {
+        "fakerphp/faker": "2.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Core\\Helpers\\": "Core/Helpers/",
+            "Controllers\\": "Controllers/",
+            "API\\": "API/",
+            "Models\\": "Models/",
+
+            "Database\\": "Database/",
+
+            "Database\\Factory\\": "Database/Factory/",
+            "Database\\Seeder\\": "Database/Seeder/",
+
+            "PDODB\\": "vendor/pdo/",
+
+            "Faker\\": "vendor/fakerphp/faker/src/",
+            
+            "Lawana\\Utils\\": "vendor/lawana/Utils/",
+            "Lawana\\Environment\\RFile\\": "vendor/lawana/Environment/RFile",
+            "Lawana\\Environment\\WFile\\": "vendor/lawana/Environment/WFile",
+            "Lawana\\Environment\\Options\\": "vendor/lawana/Environment/Options",
+            "Lawana\\Environment\\Local\\": "vendor/lawana/Environment/Local",
+        
+            
+            "Lawana\\Controller\\": "vendor/lawana/Controller/",
+            "Lawana\\Model\\": "vendor/lawana/Model/",
+            "Lawana\\View\\": "vendor/lawana/View/",
+            "Lawana\\API\\": "vendor/lawana/API/",
+
+            "Lawana\\Database\\Factory\\": "vendor/lawana/Database/Factory/",
+            "Lawana\\Database\\Seeder\\": "vendor/lawana/Database/Seeder/",
+
+            "Lawana\\Routing\\": "vendor/lawana/Routing/",
+            "Lawana\\Kernel\\": "vendor/lawana/Kernel/",
+            "Lawana\\Message\\": "vendor/lawana/Message/",
+            "Lawana\\Message\\Layout\\": "vendor/lawana/Message/Layout/"
+        }
+    }
+}

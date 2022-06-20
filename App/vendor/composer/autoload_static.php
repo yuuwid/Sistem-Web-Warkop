@@ -6,9 +6,14 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitdac6923e96b38f35b893f8afe5f98514
 {
+    public static $files = array (
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
+            'Psr\\Container\\' => 14,
             'PDODB\\' => 6,
         ),
         'M' => 
@@ -28,8 +33,20 @@ class ComposerStaticInitdac6923e96b38f35b893f8afe5f98514
             'Lawana\\Environment\\RFile\\' => 25,
             'Lawana\\Environment\\Options\\' => 27,
             'Lawana\\Environment\\Local\\' => 25,
+            'Lawana\\Database\\Seeder\\' => 23,
+            'Lawana\\Database\\Factory\\' => 24,
             'Lawana\\Controller\\' => 18,
-            'Lawana\\API\\' => 11,
+            'Lawana\\Api\\' => 11,
+        ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
+        'D' => 
+        array (
+            'Database\\Seeder\\' => 16,
+            'Database\\Factory\\' => 17,
+            'Database\\' => 9,
         ),
         'C' => 
         array (
@@ -39,11 +56,15 @@ class ComposerStaticInitdac6923e96b38f35b893f8afe5f98514
         ),
         'A' => 
         array (
-            'API\\' => 4,
+            'Api\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'PDODB\\' => 
         array (
             0 => __DIR__ . '/..' . '/pdo',
@@ -96,13 +117,38 @@ class ComposerStaticInitdac6923e96b38f35b893f8afe5f98514
         array (
             0 => __DIR__ . '/..' . '/lawana/Environment/Local',
         ),
+        'Lawana\\Database\\Seeder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lawana/Database/Seeder',
+        ),
+        'Lawana\\Database\\Factory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lawana/Database/Factory',
+        ),
         'Lawana\\Controller\\' => 
         array (
             0 => __DIR__ . '/..' . '/lawana/Controller',
         ),
-        'Lawana\\API\\' => 
+        'Lawana\\Api\\' => 
         array (
-            0 => __DIR__ . '/..' . '/lawana/API',
+            0 => __DIR__ . '/..' . '/lawana/Api',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src',
+            1 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
+        ),
+        'Database\\Seeder\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Database/Seeder',
+        ),
+        'Database\\Factory\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Database/Factory',
+        ),
+        'Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Database',
         ),
         'Core\\Helpers\\' => 
         array (
@@ -116,9 +162,9 @@ class ComposerStaticInitdac6923e96b38f35b893f8afe5f98514
         array (
             0 => __DIR__ . '/../..' . '/Controllers',
         ),
-        'API\\' => 
+        'Api\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/API',
+            0 => __DIR__ . '/../..' . '/Api',
         ),
     );
 

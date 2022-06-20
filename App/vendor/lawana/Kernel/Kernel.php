@@ -27,10 +27,40 @@ class Kernel extends Web
         FileReader::read_env();
         FileWriter::write_env();
 
+        $this->factory();
         $this->server();
     }
 
 
+    private function factory()
+    {
+        require PATH_APP . 'App/Database/seeding.php';
+
+
+        if (is_assoc($factories)) {
+
+            foreach ($factories as $fa => $opt) {
+
+                if ($opt == 'open') {
+                    $path = PATH_APP . 'App/' . $fa . '.php';
+                    if (file_exists($path)) {
+                        $fa = new $fa();
+
+                        $fa->production();
+                    }
+                }
+            }
+        } else {
+            foreach ($factories as $fa) {
+                $path = PATH_APP . 'App/' . $fa . '.php';
+                if (file_exists($path)) {
+                    $fa = new $fa();
+
+                    $fa->production();
+                }
+            }
+        }
+    }
 
 
 

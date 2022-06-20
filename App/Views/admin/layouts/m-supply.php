@@ -9,7 +9,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3" id="data-supply">
         <?php foreach ($data['pembelian'] as $pembelian) : ?>
-            <div class="col">
+            <div class="col mb-3">
                 <div class="card text-center">
                     <div class="card-header">
                         <?php if ($pembelian['status'] == 0) : ?>

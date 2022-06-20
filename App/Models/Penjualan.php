@@ -16,7 +16,6 @@ class Penjualan extends BaseModel
 
         return self::query("SELECT LAST_INSERT_ID()")->execute()->fetch();
     }
-
     public static function detail($data)
     {
         $query = "INSERT INTO detail_penjualan(id_produk, id_penjualan, jumlah_barang, jumlah_harga) VALUES ";
@@ -47,6 +46,14 @@ class Penjualan extends BaseModel
 
         return self::query($query)->execute()->fetch(FETCH_ALL);
     }
+
+    public static function count()
+    {
+        $query = "SELECT COUNT(id_penjualan) total FROM penjualan";
+        $result = self::query($query)->execute()->fetch();
+        return $result;
+    }
+
 
     private static function queryAll()
     {
