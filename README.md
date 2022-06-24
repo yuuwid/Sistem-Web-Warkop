@@ -5,7 +5,9 @@ Sistem Web Warkop ini dikembangkan di dalam Kerangka Kerja Aplikasi (_Framework_
 
 ## Konfigurasi
 1. Buat Database dengan nama warkop
-2. Lakukan Import file **warkop.sql**
+2. Lakukan Import file database yang ada di **App/Models/db/warkop.sql**
+3. Kemudian Import kembali file **App/Models/db/backup.sql**
+4. Dan yang terakhir import file **App/Models/db/update.sql**
 3. Masuk ke bagian `App/env.lawana`, edit bagian konfigurasi Database
     ```
     DB_TYPE = "mysql"
